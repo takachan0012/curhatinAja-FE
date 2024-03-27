@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+    --shadow-color: rgb(0, 0, 0);
+}
+
+
+
+@layer utilities {
+    .shadow-custom {
+        box-shadow: 3px 3px rgb(255, 255, 255), 5px 5px 0px 2px rgb(0, 0, 0);
+    }
+}
