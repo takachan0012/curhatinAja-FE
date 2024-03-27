@@ -1,6 +1,6 @@
-
+import { MyButton } from "@components/elements/button"
 const App = () => {
-  return <h1>Hello</h1>
+  return <MyButton>Hello</MyButton>
 }
 
 export default App
