@@ -10,7 +10,7 @@ import {
 } from "@components/ui/dialog";
 import { CopyIcon } from "@radix-ui/react-icons"
 
-const CreatedId = () => {
+const CreatedKey = () => {
     return (
         <Dialog open='true'>
             <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
@@ -33,4 +33,4 @@ const CreatedId = () => {
     )
 }
 
-export { CreatedId }
+export { CreatedKey }
