@@ -18,7 +18,7 @@ const Feeds = () => {
                     <img src={Icon} alt="" className="h-[42px]" />
                     <h1 className="font-bold text-lg">Utarakan !selatan</h1>
                 </header>
-                <div className="flex flex-col gap-2 mt-4 lg:h-4/5 lg:overflow-y-scroll rounded-lg">
+                <div className="flex flex-col gap-2 mt-4 lg:h-4/5 lg:overflow-y-scroll rounded-lg px-3">
                     {users.map((user, index) => <Card key={index} className='h-max border-2 border-black'>
                         <CardHeader className='p-2 flex flex-row items-center'>
                             <CardTitle className='text-[1rem]'>
