@@ -12,14 +12,15 @@ import {
 import teddy from "@assets/teddy-bear-head-svgrepo-com.svg"
 
 
-const Register = () => {
+const Register = ({ children }) => {
     return (
-        <Dialog open='true'>
-            <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
+        <Dialog>
+            {children}
+            <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5 w-11/12'>
                 <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
                     <div className="lg:9/12">
                         <DialogTitle className='text-2xl text-left'>Eiiittssss...</DialogTitle>
-                        <DialogDescription className='text-base lg:text-xl font-semibold'>Bikin username dulu yuk!</DialogDescription>
+                        <DialogDescription className='text-base text-left lg:text-xl font-semibold'>Bikin username dulu yuk!</DialogDescription>
                     </div>
                     <img src={teddy} alt="teddy" className='w-14' />
                 </DialogHeader>
