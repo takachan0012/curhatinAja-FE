@@ -5,7 +5,7 @@ import { Textarea } from "@components/ui/textarea";
 import { users } from "@utils/dataSample";
 import { authLogin } from "@utils/isLogin";
 import { Navigate } from "react-router-dom";
-import { Login } from "@components/layout/login";
+import { Register } from "@components/layout/register";
 import { DialogTrigger } from "@components/ui/dialog";
 
 const InitialPage = () => {
@@ -27,21 +27,21 @@ const InitialPage = () => {
                                 className='border-2 border-black h-[200px] text-base resize-none'
                                 placeholder='Tulis sesuatu...'
                             />
-                            <Login>
+                            <Register>
                                 <DialogTrigger>
                                     <Button className='font-bold text-[25px] w-full'>Post</Button>
                                 </DialogTrigger>
-                            </Login>
+                            </Register>
                         </div>
                     </section>
                     <Card className='p-4 -ms-2 bg-[#CAFEDB] h-[614px] lg:w-[435px] border-2 border-black shadow-custom hover:shadow-[0_0px_0px_rgb(0,0,0)] hover:translate-x-2 hover:translate-y-1 focus:translate-x-2 focus:translate-y-1'>
-                        <CardHeader className='flex flex-row justify-between font-bold'>
+                        <CardHeader className='flex items-center flex-row justify-between font-bold'>
                             <span>Latest post</span>
-                            <Login>
+                            <Register>
                                 <DialogTrigger>
-                                    <a href="#" className="underline hover:no-underline">See more</a>
+                                    <span className="underline hover:no-underline">See more</span>
                                 </DialogTrigger>
-                            </Login>
+                            </Register>
                         </CardHeader>
                         <CardContent className='px-2 flex flex-col gap-2 overflow-hidden'>
                             {users.map((user, index) => <Card key={index} className='h-[118px] border-2 border-black hover:cursor-pointer'>
