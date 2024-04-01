@@ -37,7 +37,11 @@ const InitialPage = () => {
                     <Card className='p-4 -ms-2 bg-[#CAFEDB] h-[614px] lg:w-[435px] border-2 border-black shadow-custom hover:shadow-[0_0px_0px_rgb(0,0,0)] hover:translate-x-2 hover:translate-y-1 focus:translate-x-2 focus:translate-y-1'>
                         <CardHeader className='flex flex-row justify-between font-bold'>
                             <span>Latest post</span>
-                            <a href="#" className="underline hover:no-underline">See more</a>
+                            <Login>
+                                <DialogTrigger>
+                                    <a href="#" className="underline hover:no-underline">See more</a>
+                                </DialogTrigger>
+                            </Login>
                         </CardHeader>
                         <CardContent className='px-2 flex flex-col gap-2 overflow-hidden'>
                             {users.map((user, index) => <Card key={index} className='h-[118px] border-2 border-black hover:cursor-pointer'>
