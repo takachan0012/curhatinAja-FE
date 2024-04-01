@@ -11,10 +11,11 @@ import {
 } from "@components/ui/dialog";
 
 
-const Login = () => {
+const Login = ({ children }) => {
     return (
-        <Dialog open='true'>
-            <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
+        <Dialog>
+            {children}
+            <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5 w-11/12'>
                 <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
                     <DialogTitle className='text-2xl text-left'>Masukan Private Key</DialogTitle>
                 </DialogHeader>
