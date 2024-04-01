@@ -16,14 +16,21 @@ import {
     SheetContent,
     SheetHeader,
     SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
+import {
+    Dialog,
+    DialogContent,
+    DialogTrigger,
+    DialogHeader,
+    DialogTitle
+} from "@components/ui/dialog";
 import TeddyIcon from "@assets/teddy-bear-animals-svgrepo-com.svg";
 const Feeds = () => {
     const textArea = useRef();
     return (
         <div className="bg-[#DFFF67] lg:h-screen lg:w-screen lg:flex ">
             <section className="relative bg-transparent lg:bg-[#CAFEDB]  lg:h-screen lg:w-1/4 border-r-2 border-black p-4">
-                <header className="p-4 sticky top-4 bg-[#DFFF67] lg:bg-transparent flex gap-2 items-center ">
+                <header className="z-50 p-4 sticky top-4 bg-[#DFFF67] lg:bg-transparent flex gap-2 items-center ">
                     <div className="block mr-2 lg:hidden">
                         <Sheet>
                             <SheetTrigger asChild>
@@ -92,10 +99,23 @@ const Feeds = () => {
                 </div>
             </section>
             <section className="fixed bottom-7 right-5 lg:hidden">
-                <Button className='font-bold'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-                </Button>
+                <Dialog>
+                    <DialogTrigger>
+                        <Button className='font-bold'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        </Button>
+                    </DialogTrigger>
+                    <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
+                        <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
+                            <DialogTitle className='text-2xl text-left'>
+                                Buat Post
+                            </DialogTitle>
+                        </DialogHeader>
+                        <Textarea placeholder='Tulis sesuatu...' className='h-[15rem] border-2 border-black w-full resize-none' />
+                        <Button className='font-bold w-full'>Post</Button>
+                    </DialogContent>
+                </Dialog >
             </section>
         </div>
     )
