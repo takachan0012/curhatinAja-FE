@@ -11,13 +11,38 @@ import {
     MenubarItem
 } from "@/components/ui/menubar";
 import { Textarea } from "@components/ui/textarea";
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTrigger,
+} from "@/components/ui/sheet"
 import TeddyIcon from "@assets/teddy-bear-animals-svgrepo-com.svg";
 const Feeds = () => {
     const textArea = useRef();
     return (
         <div className="bg-[#DFFF67] lg:h-screen lg:w-screen lg:flex ">
-            <section className="relative bg-[#CAFEDB] lg:h-screen lg:w-1/4 border-r-2 border-black p-4">
-                <header className="flex gap-2 items-center">
+            <section className="relative bg-transparent lg:bg-[#CAFEDB]  lg:h-screen lg:w-1/4 border-r-2 border-black p-4">
+                <header className="p-4 sticky top-4 bg-[#DFFF67] lg:bg-transparent flex gap-2 items-center ">
+                    <div className="block mr-2 lg:hidden">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <Button variant="outline"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                                </svg>
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent side='left'>
+                                <SheetHeader>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-[42px]">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                    <span>Your_Own_Username</span>
+                                    <Button variant='outline'>Logout</Button>
+                                </SheetHeader>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                     <img src={Icon} alt="" className="h-[42px]" />
                     <h1 className="font-bold text-lg">Utarakan !selatan</h1>
                 </header>
@@ -37,7 +62,7 @@ const Feeds = () => {
                         </CardFooter>
                     </Card>)}
                 </div>
-                <div className="absolute bottom-9 flex items-center">
+                <div className="hidden lg:flex absolute bottom-5  items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-[42px]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
@@ -51,12 +76,12 @@ const Feeds = () => {
                     </Menubar>
                 </div>
             </section>
-            <section className="relative lg:w-3/4 p-4">
+            <section className="hidden relative lg:block lg:w-3/4 p-4">
                 <div className="w-4/5 h-3/4 flex flex-col items-center justify-center">
                     <img src={TeddyIcon} alt="" className="h-[292px]" />
                     <span className="text-[2rem] font-bold">You don't look good, you need a hug</span>
                 </div>
-                <div className="absolute bottom-9 flex justify-center w-4/5 px-4">
+                <div className="absolute bottom-5 flex justify-center w-4/5 px-4">
                     <Textarea ref={textArea} placeholder='Tulis sesuatu...' className='border-2 border-black h-[36px] resize-none' rows='1' onInput={() => {
                         if (textArea.current.scrollHeight < 296) {
                             textArea.current.style.height = "";
