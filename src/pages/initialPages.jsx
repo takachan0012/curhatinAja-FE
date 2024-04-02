@@ -28,9 +28,7 @@ const InitialPage = () => {
                                 placeholder='Tulis sesuatu...'
                             />
                             <Register>
-                                <DialogTrigger>
-                                    <Button className='font-bold text-[25px] w-full'>Post</Button>
-                                </DialogTrigger>
+                                <DialogTrigger className='font-bold text-[25px] w-full -ms-2 outline-2 shadow-custom hover:shadow-[0_0px_0px_rgb(0,0,0)] bg-black ease-out hover:translate-x-2 hover:translate-y-1 transition-all rounded-md text-[#DFFF67] focus:shadow-[0_0px_0px_rgb(0,0,0)] focus:translate-x-2 focus:translate-y-1'>Post</DialogTrigger>
                             </Register>
                         </div>
                     </section>
