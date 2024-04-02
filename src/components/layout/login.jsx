@@ -1,31 +1,40 @@
 import React from "react";
 import { Button } from "@components/ui/button";
 import { Input } from "@components/ui/input";
-import {
-    Dialog,
-    DialogHeader,
-    DialogTitle,
-    DialogDescription,
-    DialogContent,
-    DialogFooter
-} from "@components/ui/dialog";
+import Icon from "@assets/volume-svgrepo-com.svg";
+import { Card, CardContent, CardTitle, CardFooter } from "@components/ui/card";
+import { DialogTrigger } from "@components/ui/dialog";
+import { Register } from "@components/layout/register";
 
 
-const Login = ({ children }) => {
+const Login = () => {
     return (
-        <Dialog>
-            {children}
-            <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5 w-11/12'>
-                <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
-                    <DialogTitle className='text-2xl text-left'>Masukan Private Key</DialogTitle>
-                </DialogHeader>
-                <Input placeholder='Private key...' className='border-2 border-black w-full' />
-                <Button className='font-bold w-full'>Login</Button>
-                <DialogFooter>
-                    <DialogDescription className='text-sm'>Belum punya akun? <a href="#" className='text-base decoration-solid underline hover:no-underline'>Register</a></DialogDescription>
-                </DialogFooter>
-            </DialogContent>
-        </Dialog >
+        <div className="h-screen w-screen flex flex-col justify-center items-center">
+            <header className="w-1/2 p-11 flex flex-col justify-end">
+                <div className="flex items-center gap-2 my-3">
+                    <img src={Icon} alt="icon-utarakan" className="h-[45px]" />
+                    <h1 className="font-bold text-2xl">Utarakan !selatan</h1>
+                </div>
+                <p className="text-lg">Dipenuhi dengan segala drama kehidupan tanpa jaminan spoiler? Tenang saja! Utarakan hadir sebagai penyimpan rahasia terpercaya untuk mengeluarkan semua keluh kesah hidup Anda secara anonim. Dalam bahasa yang lebih sederhana: kami adalah tempat aman di mana Anda bisa curhat tanpa takut digibahin oleh tetangga sebelah!</p>
+            </header>
+            <section className="w-1/2 p-11">
+                <Card className='border-2 border-black'>
+                    <CardContent className='p-6 flex flex-col gap-3'>
+                        <CardTitle className='text-center my-7'>Masukan Private Key</CardTitle>
+                        <Input placeholder='Private Key...' className='border-2 border-black w-full' />
+                        <Button className='font-bold w-full text-lg'>Login</Button>
+                    </CardContent>
+                    <CardFooter className='p-6 flex flex-col gap-3'>
+                        <span>Belum punya akun? </span>
+                        <Register>
+                            <DialogTrigger>
+                                <span className='font-light text-[25px] w-full underline hover:no-underline'>Register</span>
+                            </DialogTrigger>
+                        </Register>
+                    </CardFooter>
+                </Card>
+            </section>
+        </div>
     )
 }
 
