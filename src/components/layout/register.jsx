@@ -9,10 +9,12 @@ import {
     DialogContent,
     DialogFooter
 } from "@components/ui/dialog";
-import teddy from "@assets/teddy-bear-head-svgrepo-com.svg"
+import teddy from "@assets/teddy-bear-head-svgrepo-com.svg";
+import { Link, useLocation } from "react-router-dom";
 
 
 const Register = ({ children }) => {
+    const { pathname } = useLocation();
     return (
         <Dialog>
             {children}
@@ -26,9 +28,9 @@ const Register = ({ children }) => {
                 </DialogHeader>
                 <Input placeholder='Username...' className='border-2 border-black w-full' />
                 <Button className='font-bold w-full'>Register</Button>
-                <DialogFooter>
-                    <DialogDescription className='text-sm'>Sudah punya akun? <a href="#" className='text-base decoration-solid underline hover:no-underline'>Login</a></DialogDescription>
-                </DialogFooter>
+                {pathname !== '/login' ? <DialogFooter>
+                    <DialogDescription className='text-sm'>Sudah punya akun? <Link to='/login' className='text-base decoration-solid underline hover:no-underline'>Login</Link></DialogDescription>
+                </DialogFooter> : null}
             </DialogContent>
         </Dialog >
     )
