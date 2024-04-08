@@ -10,9 +10,9 @@ import {
 } from "@components/ui/dialog";
 import { CopyIcon } from "@radix-ui/react-icons"
 
-const CreatedKey = () => {
+const CreatedKey = ({ isOpen, openVerification }) => {
     return (
-        <Dialog open='true'>
+        <Dialog open={isOpen}>
             <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
                 <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
                     <div className="lg:9/12">
@@ -21,13 +21,13 @@ const CreatedKey = () => {
                     </div>
                 </DialogHeader>
                 <div className="flex items-center gap-2">
-                    <Input readonly='true' defaultValue='xxxksjglaja' className='border-2 border-black w-full' />
+                    <Input readOnly defaultValue='xxxksjglaja' className='border-2 border-black w-full' />
                     <Button type="button" size="sm" className="border-2 border-black h-10 -mt-2">
                         <span className="sr-only">Copy</span>
                         <CopyIcon className="h-4 w-4" />
                     </Button>
                 </div>
-                <Button className='font-bold w-full'>Lanjut</Button>
+                <Button className='font-bold w-full' onClick={openVerification}>Lanjut</Button>
             </DialogContent>
         </Dialog >
     )

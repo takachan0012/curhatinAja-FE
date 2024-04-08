@@ -8,9 +8,9 @@ import {
     DialogContent
 } from "@components/ui/dialog";
 
-const VerificationKey = () => {
+const VerificationKey = ({ isOpen }) => {
     return (
-        <Dialog open='true'>
+        <Dialog open={isOpen}>
             <DialogContent className='p-11 flex flex-col bg-[#DFFF67] gap-5'>
                 <DialogHeader className='flex flex-row justify-between lg:justify-normal'>
                     <div className="lg:9/12">
