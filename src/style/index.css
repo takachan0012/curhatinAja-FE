@@ -1,19 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/permanent-marker');
+@import url('https://fonts.cdnfonts.com/css/dm-sans');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    color: #FFFFFF;
 }
 
 :root {
     --shadow-color: rgb(0, 0, 0);
-    background-color: #DFFF67;
+    background-color: #090711;
 }
 
+.header {
+    font-family: 'Permanent Marker', sans-serif;
+}
 
 
 @layer utilities {
