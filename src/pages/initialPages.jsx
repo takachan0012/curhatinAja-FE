@@ -3,23 +3,51 @@ import { Button } from "@components/ui/button";
 import { authLogin } from "@utils/isLogin";
 import { Navigate } from "react-router-dom";
 import IconSpeak from "@assets/user-speak-rounded-svgrepo-com.svg"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenuSeparator,
+} from "@components/ui/dropdown-menu";
 
 const InitialPage = () => {
     const isLogin = authLogin();
     return (
         <>
             {isLogin ? <Navigate to="/feeds" /> :
-                <div className="flex flex-col items-center">
-                    <header className="mt-11 w-11/12 bg-[#111020] min-h-[100px] p-4 drop-shadow-[35px_35px_35px_35px_rgba(234, 234, 234, 1)] flex items-center justify-between border-2 border-white">
-                        <div className="flex gap-2 items-center">
-                            <img src={IconSpeak} alt="icon-utarakan" className="h-[50px]" />
-                            <h1 className="header text-[#97FE99] text-[36px]">UTARAKAN</h1>
-                        </div>
-                        <div className="text-[24px] flex gap-2 items-center">
-                            <h1>Features</h1>
-                            <h1>Testimonials</h1>
-                        </div>
-                        <Button className="text-[24px]">Mulai Berbicara Sekarang!</Button>
+                <div className="w-screen flex justify-center py-4">
+                    <header className="flex justify-between items-center w-11/12 bg-black-secondary border border-gray-primary h-fit p-4 rounded-lg">
+                        <section className="flex justify-start gap-1 items-center">
+                            <img src={IconSpeak} alt="icon-curhatinaja" className="w-12" />
+                            <h1 className="text-green-primary font-bold text-xl">CurhatinAja</h1>
+                        </section>
+                        <section>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger className="data-[state=open]:border-2 border-green-primary focus:outline-none rounded-md ">
+                                    <Button className='bg-black-secondary'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                        </svg>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-screen border-none mt-5 flex justify-center p-0">
+                                    <div className="flex flex-col gap-2 items-center w-11/12 bg-black-secondary border border-gray-primary h-fit p-4 rounded-lg">
+                                        <DropdownMenuItem className="w-full text-white px-4 py-2 rounded-md border-b border-green-primary">
+                                            <a href="http://" className="bg-gradient-to-r from-slate-400 to-white text-transparent bg-clip-text">Features</a>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem className="w-full text-white px-4 py-2 rounded-md border-b border-green-primary">
+                                            <a href="http://" className="bg-gradient-to-r from-slate-400 to-white text-transparent bg-clip-text">Testimonials</a>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem className="w-full">
+                                            <Button className='w-full'>
+                                                Mulai Bicara Sekarang!
+                                            </Button>
+                                        </DropdownMenuItem>
+                                    </div>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </section>
                     </header>
                 </div>
             }
