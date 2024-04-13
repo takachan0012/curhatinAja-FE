@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@components/ui/button";
 import { authLogin } from "@utils/isLogin";
 import { Navigate } from "react-router-dom";
@@ -8,7 +7,6 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-    DropdownMenuSeparator,
 } from "@components/ui/dropdown-menu";
 
 const InitialPage = () => {
@@ -24,12 +22,10 @@ const InitialPage = () => {
                         </section>
                         <section>
                             <DropdownMenu>
-                                <DropdownMenuTrigger className="data-[state=open]:border-2 border-green-primary focus:outline-none rounded-md ">
-                                    <Button className='bg-black-secondary'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                        </svg>
-                                    </Button>
+                                <DropdownMenuTrigger className="bg-black-secondary data-[state=open]:border-2 border-green-primary focus:outline-none rounded-md p-2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                    </svg>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent className="w-screen border-none mt-5 flex justify-center p-0">
                                     <div className="flex flex-col gap-2 items-center w-11/12 bg-black-secondary border border-gray-primary h-fit p-4 rounded-lg">
